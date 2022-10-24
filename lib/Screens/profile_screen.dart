@@ -129,227 +129,27 @@ class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Container(
-            width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
-              boxShadow: const [
-                BoxShadow(
-                  blurRadius: 0.5,
-                  color: Color(0xFFF1F4F8),
-                  offset: Offset(0, 0),
-                )
-              ],
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Colors.grey.shade300,
+        title: const Text(
+          'Deporte',
+          style: TextStyle(color: Colors.black),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: IconButton(
+              icon: const Icon(Icons.menu),
+              tooltip: 'Go to menu',
+              color: Colors.black,
+              onPressed: () {},
             ),
-            child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(24, 12, 24, 12),
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Container(
-                    width: 76,
-                    height: 76,
-                    clipBehavior: Clip.antiAlias,
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                    ),
-                    child: Image.asset(
-                      'assets/images/avatar.png',
-                    ),
-                  ),
-                  Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
-                              child: Text("Nombre de usuario",
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w500))),
-                          Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
-                              child: Text("Correo electrónico",
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w500))),
-                        ],
-                      )),
-                ],
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16, 10, 16, 0),
-            child: Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 4),
-                  child: Text(
-                    'Configuración de usuario.',
-                    style: TextStyle(fontSize: 18, color: Colors.blue),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Column(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: GestureDetector(
-                    onTap: () {
-                      viewModal(context, 1);
-                    },
-                    child: Material(
-                      borderRadius: BorderRadius.circular(10),
-                      elevation: 5,
-                      child: Container(
-                        width: MediaQuery.of(context).size.width,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          color: Color.fromARGB(179, 247, 240, 240),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            Container(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 20),
-                              child: Text(
-                                'Cambiar nombre de usuario',
-                                style: TextStyle(
-                                  fontSize: 15,
-                                ),
-                              ),
-                            ),
-                            Container(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 20),
-                              child: const Icon(
-                                Icons.arrow_right,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  )),
-              Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: GestureDetector(
-                    onTap: () {
-                      viewModal(context, 2);
-                    },
-                    child: Material(
-                      borderRadius: BorderRadius.circular(10),
-                      elevation: 5,
-                      child: Container(
-                        width: MediaQuery.of(context).size.width,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          color: Color.fromARGB(179, 247, 240, 240),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            Container(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 20),
-                              child: Text(
-                                'Cambiar correo electronico',
-                                style: TextStyle(
-                                  fontSize: 15,
-                                ),
-                              ),
-                            ),
-                            Container(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 20),
-                              child: const Icon(
-                                Icons.arrow_right,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  )),
-              Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: GestureDetector(
-                    onTap: () {
-                      viewModal(context, 3);
-                    },
-                    child: Material(
-                      borderRadius: BorderRadius.circular(10),
-                      elevation: 5,
-                      child: Container(
-                        width: MediaQuery.of(context).size.width,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          color: Color.fromARGB(179, 247, 240, 240),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            Container(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 20),
-                              child: Text(
-                                'Cambiar contraseña',
-                                style: TextStyle(
-                                  fontSize: 15,
-                                ),
-                              ),
-                            ),
-                            Container(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 20),
-                              child: const Icon(
-                                Icons.arrow_right,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  )),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 20),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 10),
-                      child: ElevatedButton(
-                          onPressed: () async {
-                            {}
-                          },
-                          child: const Text("Cerrar sesión")),
-                    ),
-                  ],
-                ),
-              )
-            ],
-          ),
+          )
         ],
+      ),
+      body: Column(
+        children: [],
       ),
     );
   }

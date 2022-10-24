@@ -28,14 +28,6 @@ class _BottomState extends State<Bottom> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: Colors.grey.shade300,
-        title: const Text(
-          'DrinkMap',
-          style: TextStyle(color: Colors.black),
-        ),
-      ),
       extendBody: true,
       body: screens[index],
       bottomNavigationBar: CurvedNavigationBar(
