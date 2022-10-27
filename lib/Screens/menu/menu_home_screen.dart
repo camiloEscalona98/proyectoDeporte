@@ -132,24 +132,26 @@ class _MenuHomeState extends State<MenuHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 32, 57, 73),
       appBar: AppBar(
+        elevation: 0,
         centerTitle: true,
-        backgroundColor: Colors.grey.shade300,
+        backgroundColor: Color.fromARGB(255, 32, 57, 73),
         title: const Text(
           'DrinkMap',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: Colors.white),
         ),
-        actions: [
+        /* actions: [
           IconButton(
             onPressed: () {},
             icon: IconButton(
               icon: const Icon(Icons.menu),
               tooltip: 'Increase volume by 10',
-              color: Colors.black,
+              color: Colors.white,
               onPressed: () {},
             ),
           )
-        ],
+        ], */
       ),
       body: Column(
         children: [
@@ -159,7 +161,7 @@ class _MenuHomeState extends State<MenuHome> {
               boxShadow: const [
                 BoxShadow(
                   blurRadius: 0.5,
-                  color: Color(0xFFF1F4F8),
+                  color: Color.fromARGB(255, 46, 77, 86),
                   offset: Offset(0, 0),
                 )
               ],
@@ -192,7 +194,7 @@ class _MenuHomeState extends State<MenuHome> {
                                   EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
                               child: Text("Nombre de usuario",
                                   style: TextStyle(
-                                      color: Colors.black,
+                                      color: Colors.white,
                                       fontSize: 18,
                                       fontWeight: FontWeight.w500))),
                           Padding(
@@ -200,7 +202,7 @@ class _MenuHomeState extends State<MenuHome> {
                                   EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
                               child: Text("Correo electrónico",
                                   style: TextStyle(
-                                      color: Colors.black,
+                                      color: Colors.white,
                                       fontSize: 12,
                                       fontWeight: FontWeight.w500))),
                         ],
@@ -219,7 +221,7 @@ class _MenuHomeState extends State<MenuHome> {
                   padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 4),
                   child: Text(
                     'Configuración de usuario.',
-                    style: TextStyle(fontSize: 18, color: Colors.blue),
+                    style: TextStyle(fontSize: 18, color: Colors.white),
                   ),
                 ),
               ],
@@ -234,38 +236,40 @@ class _MenuHomeState extends State<MenuHome> {
                     onTap: () {
                       viewModal(context, 1);
                     },
-                    child: Material(
-                      borderRadius: BorderRadius.circular(10),
-                      elevation: 5,
-                      child: Container(
-                        width: MediaQuery.of(context).size.width,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          color: Color.fromARGB(179, 247, 240, 240),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            Container(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 20),
-                              child: Text(
-                                'Cambiar nombre de usuario',
-                                style: TextStyle(
-                                  fontSize: 15,
-                                ),
+                    child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: 70,
+                      decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 32, 57, 73),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          IconButton(
+                            onPressed: () {},
+                            icon: IconButton(
+                              icon: const Icon(Icons.person),
+                              tooltip: 'Increase volume by 10',
+                              color: Color.fromARGB(255, 37, 188, 145),
+                              onPressed: () {},
+                            ),
+                          ),
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 20),
+                            child: Text(
+                              'Cambiar nombre de usuario',
+                              style: TextStyle(
+                                fontSize: 15,
                               ),
                             ),
-                            Container(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 20),
-                              child: const Icon(
-                                Icons.arrow_right,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ],
-                        ),
+                          ),
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 20),
+                            child: const Icon(Icons.arrow_forward_ios,
+                                color: Color.fromARGB(255, 37, 188, 145)),
+                          ),
+                        ],
                       ),
                     ),
                   )),
@@ -352,21 +356,23 @@ class _MenuHomeState extends State<MenuHome> {
                     ),
                   )),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 20),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 10),
-                      child: ElevatedButton(
-                          onPressed: () async {
-                            {}
-                          },
-                          child: const Text("Cerrar sesión")),
+                padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 80),
+                child: SizedBox(
+                  width: 300.0,
+                  height: 50.0,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      elevation: 3,
+                      primary: Color.fromARGB(255, 37, 188, 145),
+                      onPrimary: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
                     ),
-                  ],
+                    onPressed: () {},
+                    child: const Text('Cerrar sesión',
+                        style: TextStyle(fontSize: 16)),
+                  ),
                 ),
               )
             ],

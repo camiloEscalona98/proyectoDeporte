@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:accordion/accordion.dart';
 
+import 'menu/menu_home_screen.dart';
+
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
 
@@ -140,9 +142,9 @@ class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color.fromARGB(255, 24, 55, 120),
+        backgroundColor: Color.fromARGB(255, 32, 57, 73),
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 24, 55, 120),
+          backgroundColor: Color.fromARGB(255, 32, 57, 73),
           elevation: 0,
           centerTitle: true,
           title: const Text(
@@ -153,10 +155,15 @@ class _ProfileState extends State<Profile> {
             IconButton(
               onPressed: () {},
               icon: IconButton(
-                icon: const Icon(Icons.menu),
+                icon: const Icon(Icons.settings),
                 tooltip: 'Go to menu',
                 color: Colors.white,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MenuHome()),
+                  );
+                },
               ),
             )
           ],
@@ -179,9 +186,15 @@ class _ProfileState extends State<Profile> {
                                   const EdgeInsets.only(left: 10, right: 0),
                               child: Column(
                                 children: [
-                                  Text('123', style: TextStyle(color: Colors.white)),
-                                  Text('Juegos', style: TextStyle(color: Colors.white)),
-                                  Text('creados', style: TextStyle(color: Colors.white))
+                                  Text('123',
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 18)),
+                                  Text('Juegos',
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 18)),
+                                  Text('creados',
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 18))
                                 ],
                               ),
                             ),
@@ -204,7 +217,14 @@ class _ProfileState extends State<Profile> {
                               padding:
                                   const EdgeInsets.only(left: 0, right: 10),
                               child: Column(
-                                children: [Text('123', style: TextStyle(color: Colors.white)), Text('Me gusta',style: TextStyle(color: Colors.white)  )],
+                                children: [
+                                  Text('123',
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 18)),
+                                  Text('Me gusta',
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 18))
+                                ],
                               ),
                             ),
                           ),
@@ -212,7 +232,8 @@ class _ProfileState extends State<Profile> {
                   ),
                   Padding(
                     padding: const EdgeInsets.all(10.0),
-                    child: Text('Juanito Perez', style: TextStyle(color: Colors.white)),
+                    child: Text('Juanito Perez',
+                        style: TextStyle(color: Colors.white, fontSize: 18)),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(1.0),
@@ -221,10 +242,12 @@ class _ProfileState extends State<Profile> {
                       children: [
                         Icon(
                           Icons.fmd_good_sharp,
-                          size: 20,
+                          size: 25,
                           color: Colors.white,
                         ),
-                        Text('Temuco, Chile', style: TextStyle(color: Colors.white)),
+                        Text('Temuco, Chile',
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 18)),
                       ],
                     ),
                   ),
@@ -253,8 +276,9 @@ class _ProfileState extends State<Profile> {
                         isOpen: true,
                         leftIcon: const Icon(Icons.insights_rounded,
                             color: Colors.white),
-                        headerBackgroundColor: Color.fromARGB(255, 24, 55, 120),
-                        headerBackgroundColorOpened: Colors.red,
+                        headerBackgroundColor: Color.fromARGB(255, 32, 57, 73),
+                        headerBackgroundColorOpened:
+                            Color.fromARGB(255, 32, 57, 73),
                         header: Text('Jugados', style: _headerStyle),
                         content: Text(_loremIpsum, style: _contentStyle),
                         contentHorizontalPadding: 20,
@@ -266,8 +290,9 @@ class _ProfileState extends State<Profile> {
                         isOpen: false,
                         leftIcon: const Icon(Icons.insights_rounded,
                             color: Colors.white),
-                        headerBackgroundColor: Color.fromARGB(255, 24, 55, 120),
-                        headerBackgroundColorOpened: Colors.red,
+                        headerBackgroundColor: Color.fromARGB(255, 32, 57, 73),
+                        headerBackgroundColorOpened:
+                            Color.fromARGB(255, 32, 57, 73),
                         header: Text('Activos', style: _headerStyle),
                         content: Text(_loremIpsum, style: _contentStyle),
                         contentHorizontalPadding: 20,
@@ -279,8 +304,9 @@ class _ProfileState extends State<Profile> {
                         isOpen: false,
                         leftIcon: const Icon(Icons.insights_rounded,
                             color: Colors.white),
-                        headerBackgroundColor: Color.fromARGB(255, 24, 55, 120),
-                        headerBackgroundColorOpened: Colors.red,
+                        headerBackgroundColor: Color.fromARGB(255, 32, 57, 73),
+                        headerBackgroundColorOpened:
+                            Color.fromARGB(255, 32, 57, 73),
                         header: Text('Ganados', style: _headerStyle),
                         content: Text(_loremIpsum, style: _contentStyle),
                         contentHorizontalPadding: 20,
@@ -292,8 +318,9 @@ class _ProfileState extends State<Profile> {
                         isOpen: false,
                         leftIcon: const Icon(Icons.insights_rounded,
                             color: Colors.white),
-                        headerBackgroundColor: Color.fromARGB(255, 24, 55, 120),
-                        headerBackgroundColorOpened: Colors.red,
+                        headerBackgroundColor: Color.fromARGB(255, 32, 57, 73),
+                        headerBackgroundColorOpened:
+                            Color.fromARGB(255, 32, 57, 73),
                         header: Text('Comentarios', style: _headerStyle),
                         content: Text(_loremIpsum, style: _contentStyle),
                         contentHorizontalPadding: 20,
@@ -313,7 +340,7 @@ class _ProfileState extends State<Profile> {
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       elevation: 3,
-                      primary: Colors.lightBlue,
+                      primary: Color.fromARGB(255, 37, 188, 145),
                       onPrimary: Colors.white,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
